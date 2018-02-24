@@ -4,6 +4,7 @@
 }
 
 .mat-table {
+  /* if the content is out of the container, using scroll can view the rest part*/
   overflow: auto;
   max-height: 500px;
 }
@@ -11,6 +12,7 @@
 .example-container {
   align-content: center;
   display: flex;
+  /* set the flexible elements towards as column*/
   flex-direction: column;
   max-height: 500px;
   min-width: 300px;
