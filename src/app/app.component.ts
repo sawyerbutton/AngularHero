@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { MatTableDataSource } from '@angular/material'
 
-export class Hero {
+
+export interface Hero {
   id: Number;
   name: String;
 }
@@ -13,6 +15,7 @@ const HEROES: Hero[] = [
   {id:5,name:'E'},
 ];
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -21,6 +24,15 @@ const HEROES: Hero[] = [
 export class AppComponent {
   title = 'Tour of Heroes';
 
-  heroes = HEROES;
+  displayedColumns = ['id','name'];
+  dataSource = new MatTableDataSource(HEROES);
+
+
+  applyFilter(filterValue:string){
+    filterValue = filterValue.trim();
+    filterValue = filterValue.toLowerCase();
+    this.dataSource.filter = filterValue;
+
+  }
 
 }
