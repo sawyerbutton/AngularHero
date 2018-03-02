@@ -7,9 +7,11 @@ import { AppComponent } from './app.component';
 import { MatTableModule,MatFormFieldModule,MatInputModule} from '@angular/material';
 
 
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+
   ],
   imports: [
     BrowserModule,
