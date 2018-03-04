@@ -1,43 +1,21 @@
 import { Component } from '@angular/core';
-import { MatTableDataSource } from '@angular/material'
-
-
-export class Hero {
-  id: number;
-  name: string;
-}
-
-const HEROES: Hero[] = [
-  { id: 11, name: 'Mr. Nice' },
-  { id: 12, name: 'Narco' },
-  { id: 13, name: 'Bombasto' },
-  { id: 14, name: 'Celeritas' },
-  { id: 15, name: 'Magneta' },
-  { id: 16, name: 'RubberMan' },
-  { id: 17, name: 'Dynama' },
-  { id: 18, name: 'Dr IQ' },
-  { id: 19, name: 'Magma' },
-  { id: 20, name: 'Tornado' }
-];
+import { Hero } from './hero';
+import { HeroService } from './hero.service';
 
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-})
-export class AppComponent {
-  title = 'Tour of Heroes';
-  //hero = 'Windstorm';
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
+  })
+  export class AppComponent {
+    public selectedHero : Hero;
+    //we do not need to define the type of heroes, because the type can be read from the HEROES
+    public heroes : Hero[];
 
-  selectedHero : Hero;
+    //function area
 
-  heroes = HEROES;
-
-  onSelect(hero : Hero): void{
-    this.selectedHero = hero;
+    onSelect(hero : Hero) : void {
+      this.selectedHero = hero;
+    }
   }
-
-
-
-}
