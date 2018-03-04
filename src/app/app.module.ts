@@ -5,25 +5,33 @@ import { AlertModule } from 'ngx-bootstrap'
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
-
-
+import { HeroesComponent } from './heroes/heroes.component';
+import {HeroService} from './hero.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HttpModule }    from '@angular/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroDetailComponent,
+    HeroesComponent,
+    DashboardComponent
 
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AlertModule.forRoot(),
-    BrowserAnimationsModule
-
+    BrowserAnimationsModule,
+    AppRoutingModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [HeroService],
+  bootstrap: [AppComponent],
+
 })
+
+
 
 
 export class AppModule { }
